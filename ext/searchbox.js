@@ -6,8 +6,8 @@ var lang = acequire("../lib/lang");
 var event = acequire("../lib/event");
 var searchboxCss = "\
 .ace_search {\
-background-color: #ddd;\
-border: 1px solid #cbcbcb;\
+background-color: #fff;\
+border: 1px solid #fff;\
 border-top: 0 none;\
 max-width: 325px;\
 overflow: hidden;\
@@ -38,11 +38,11 @@ margin-bottom: 4px;\
 overflow: hidden;\
 }\
 .ace_search_form.ace_nomatch {\
-outline: 1px solid red;\
+border: 1px solid red;\
 }\
 .ace_search_field {\
-background-color: white;\
-border-right: 1px solid #cbcbcb;\
+background-color: #f7f7f7;\
+border-right: 1px solid #dbdbdb;\
 border: 0 none;\
 -webkit-box-sizing: border-box;\
 -moz-box-sizing: border-box;\
@@ -51,14 +51,14 @@ float: left;\
 height: 22px;\
 outline: 0;\
 padding: 0 7px;\
-width: 214px;\
+width: 160px;\
 margin: 0;\
 }\
 .ace_searchbtn,\
 .ace_replacebtn {\
 background: #fff;\
 border: 0 none;\
-border-left: 1px solid #dcdcdc;\
+border-left: 1px solid #dbdbdb;\
 cursor: pointer;\
 float: left;\
 height: 22px;\
@@ -154,7 +154,7 @@ dom.importCssString(searchboxCss, "ace_searchbox");
 var html = '<div class="ace_search right">\
     <button type="button" action="hide" class="ace_searchbtn_close"></button>\
     <div class="ace_search_form">\
-        <input class="ace_search_field" placeholder="Search for" spellcheck="false"></input>\
+        <input class="ace_search_field" placeholder="" spellcheck="false"></input>\
         <button type="button" action="findNext" class="ace_searchbtn next"></button>\
         <button type="button" action="findPrev" class="ace_searchbtn prev"></button>\
         <button type="button" action="findAll" class="ace_searchbtn" title="Alt-Enter">All</button>\
@@ -197,12 +197,12 @@ var SearchBox = function(editor, range, showReplaceForm) {
         this.searchInput = this.searchBox.querySelector(".ace_search_field");
         this.replaceInput = this.replaceBox.querySelector(".ace_search_field");
     };
-    
+
     this.$init = function() {
         var sb = this.element;
-        
+
         this.$initElements(sb);
-        
+
         var _this = this;
         event.addListener(sb, "mousedown", function(e) {
             setTimeout(function(){
@@ -256,7 +256,8 @@ var SearchBox = function(editor, range, showReplaceForm) {
     this.$searchBarKb.bindKeys({
         "Ctrl-f|Command-f": function(sb) {
             var isReplace = sb.isReplace = !sb.isReplace;
-            sb.replaceBox.style.display = isReplace ? "" : "none";
+            // sb.replaceBox.style.display = isReplace ? "" : "none";
+            sb.replaceBox.style.display = "none";
             sb.searchInput.focus();
         },
         "Ctrl-H|Command-Option-F": function(sb) {
@@ -348,7 +349,7 @@ var SearchBox = function(editor, range, showReplaceForm) {
         this.find(true, true);
     };
     this.findAll = function(){
-        var range = this.editor.findAll(this.searchInput.value, {            
+        var range = this.editor.findAll(this.searchInput.value, {
             regExp: this.regExpOption.checked,
             caseSensitive: this.caseSensitiveOption.checked,
             wholeWord: this.wholeWordOption.checked
@@ -362,7 +363,7 @@ var SearchBox = function(editor, range, showReplaceForm) {
     this.replace = function() {
         if (!this.editor.getReadOnly())
             this.editor.replace(this.replaceInput.value);
-    };    
+    };
     this.replaceAndFindNext = function() {
         if (!this.editor.getReadOnly()) {
             this.editor.replace(this.replaceInput.value);
@@ -387,9 +388,9 @@ var SearchBox = function(editor, range, showReplaceForm) {
 
         if (value)
             this.searchInput.value = value;
-        
+
         this.find(false, false, true);
-        
+
         this.searchInput.focus();
         this.searchInput.select();
 
@@ -413,4 +414,3 @@ exports.Search = function(editor, isReplace) {
                 (function() {
                     ace.acequire(["ace/ext/searchbox"], function() {});
                 })();
-            
