@@ -13608,7 +13608,7 @@ var Marker = function(parentEl) {
         stringBuilder.push(
             "<div class='", clazz, " ace_br1 ace_start' style='",
             "height:", height, "px;",
-            "right:0;",
+            "right:", left, "px;",
             "top:", top, "px;",
             "left:", left, "px;", extraStyle, "'></div>"
         );
@@ -13632,7 +13632,7 @@ var Marker = function(parentEl) {
         stringBuilder.push(
             "<div class='", clazz, (radiusClass ? " ace_br" + radiusClass : ""), "' style='",
             "height:", height, "px;",
-            "right:0;",
+            "right:", left, "px;",
             "top:", top, "px;",
             "left:", padding, "px;", extraStyle, "'></div>"
         );
