@@ -13603,12 +13603,13 @@ var Marker = function(parentEl) {
         var height = config.lineHeight;
         var top = this.$getTop(range.start.row, config);
         var left = padding + range.start.column * config.characterWidth;
+        var right = padding;
         extraStyle = extraStyle || "";
 
         stringBuilder.push(
             "<div class='", clazz, " ace_br1 ace_start' style='",
             "height:", height, "px;",
-            "right:", left, "px;",
+            "right:", right, "px;",
             "top:", top, "px;",
             "left:", left, "px;", extraStyle, "'></div>"
         );
@@ -13632,7 +13633,7 @@ var Marker = function(parentEl) {
         stringBuilder.push(
             "<div class='", clazz, (radiusClass ? " ace_br" + radiusClass : ""), "' style='",
             "height:", height, "px;",
-            "right:", left, "px;",
+            "right:", right, "px;",
             "top:", top, "px;",
             "left:", padding, "px;", extraStyle, "'></div>"
         );
