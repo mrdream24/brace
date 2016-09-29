@@ -80,16 +80,27 @@ background-repeat: no-repeat;\
 width: 27px;\
 }\
 .ace_searchbtn.prev {\
-background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAYAAAB4ka1VAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADFJREFUeNpiSU1NZUAC/6E0I0yACYskCpsJiySKIiY0SUZk40FyTEgCjGgKwTRAgAEAQJUIPCE+qfkAAAAASUVORK5CYII=);    \
+background-image: url(http://ac-9xUJPYdR.clouddn.com/49ca8553965bd8864c68.png);    \
+background-size: 8px 4px;\
+}\
+.ace_searchbtn.prev:hover {\
+background-image: url(http://ac-9xUJPYdR.clouddn.com/4393eeb4f22b2ecfbb7e.png);    \
+background-size: 8px 4px;\
 }\
 .ace_searchbtn.next {\
-background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAYAAAB4ka1VAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADRJREFUeNpiTE1NZQCC/0DMyIAKwGJMUAYDEo3M/s+EpvM/mkKwCQxYjIeLMaELoLMBAgwAU7UJObTKsvAAAAAASUVORK5CYII=);    \
+background-image: url(http://ac-9xUJPYdR.clouddn.com/2bfa1c9d3a7e0fe3bb46.png);    \
+background-size: 8px 4px;\
+}\
+.ace_searchbtn.next:hover {\
+background-image: url(http://ac-9xUJPYdR.clouddn.com/df1473343c4a282a958d.png);    \
+background-size: 8px 4px;\
 }\
 .ace_searchbtn_close {\
-background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAcCAYAAABRVo5BAAAAZ0lEQVR42u2SUQrAMAhDvazn8OjZBilCkYVVxiis8H4CT0VrAJb4WHT3C5xU2a2IQZXJjiQIRMdkEoJ5Q2yMqpfDIo+XY4k6h+YXOyKqTIj5REaxloNAd0xiKmAtsTHqW8sR2W5f7gCu5nWFUpVjZwAAAABJRU5ErkJggg==) no-repeat 50% 0;\
-border-radius: 50%;\
+background: url(http://ac-9xUJPYdR.clouddn.com/e32f1ae27e942b918a02.png);\
+background-size: 8px 8px;\
+background-position: 50% 50%;\
+background-repeat: no-repeat;\
 border: 0 none;\
-color: #656565;\
 cursor: pointer;\
 float: right;\
 font: 16px/16px Arial;\
@@ -100,9 +111,10 @@ text-align: center;\
 width: 14px;\
 }\
 .ace_searchbtn_close:hover {\
-background-color: #656565;\
-background-position: 50% 100%;\
-color: white;\
+background: url(http://ac-9xUJPYdR.clouddn.com/73cb68ea8b3b721c3fd4.png);\
+background-size: 8px 8px;\
+background-position: 50% 50%;\
+background-repeat: no-repeat;\
 }\
 .ace_replacebtn.prev {\
 width: 54px\
